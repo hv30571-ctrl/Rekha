@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Rekha Ladies Emporium - Premium Jewelry & Accessories</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4A574;
+            --rose-gold: #B76E79;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f9f7f4;
+            --accent: #c4956d;
+            --text-dark: #2c2c2c;
+            --text-light: #ffffff;
+            --border: #e8ddd2;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--rose-gold));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-30px) translateX(30px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .hero .description {
+            font-size: 1.05rem;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--rose-gold) 100%);
+            color: var(--text-dark);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 6rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-title h2 {
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .about-title .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--rose-gold));
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--rose-gold) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.15);
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--rose-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .highlight-text p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #666;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--rose-gold));
+            margin: 0 auto;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: white;
+            transition: all 0.5s ease;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8ddd2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .collection-card:hover .card-image::before {
+            left: 100%;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .collection-details {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .collection-details h4 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .collection-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .collection-details li {
+            padding: 0.3rem 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .collection-details li::before {
+            content: '✓ ';
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 6rem 2rem;
+            color: var(--text-light);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-details p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .contact-details a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--rose-gold);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-family: inherit;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--rose-gold) 100%);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: #888;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">✨ Sri Rekha</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sri Rekha Ladies Emporium</h1>
+            <p class="subtitle">Elegance, Luxury & Authenticity</p>
+            <p class="description">
+                Your premier destination for exquisite jewelry, bangles, hair accessories, and fancy items.
+                Discover our exclusive collections featuring imitation jewelry, one gram gold pieces, and premium fashion accessories.
+                Where tradition meets modern elegance, and every piece tells a story of grace.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Explore Collections</button>
+                <button class="btn btn-secondary">Get In Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-title">
+                <h2>About Sri Rekha Ladies Emporium</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    💎
+                </div>
+                <div class="about-text">
+                    <h3>Your Gateway to Elegance</h3>
+                    <p>
+                        Sri Rekha Ladies Emporium has been a trusted name in the jewelry and fashion accessories industry. 
+                        Located in the heart of Bhainsa, Nirmal District, Telangana, we have been serving our valued customers 
+                        with premium quality products and exceptional service since our establishment.
+                    </p>
+                    <p>
+                        We believe that every woman deserves to feel beautiful and confident. Our carefully curated collections 
+                        are designed to cater to diverse tastes and occasions, from daily wear to special celebrations. 
+                        Each piece is selected with meticulous attention to quality, design, and craftsmanship.
+                    </p>
+                    <p>
+                        Under the ownership of Harsha Chinmanwar, we have built a reputation for authenticity, reliability, 
+                        and customer satisfaction. Our commitment to excellence is reflected in every interaction and every product 
+                        we offer.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <h3 style="color: var(--text-dark); margin-bottom: 2rem; font-size: 1.8rem;">Why Choose Us?</h3>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h4>Premium Quality</h4>
+                        <p>Handpicked collections with meticulous attention to detail and craftsmanship</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h4>Exclusive Designs</h4>
+                        <p>Unique pieces you won't find elsewhere - carefully selected for authenticity</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-competitive"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h4>Affordable Luxury</h4>
+                        <p>Premium quality products at competitive prices for every budget</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h4>Customer Care</h4>
+                        <p>Personalized service and attention to help you find the perfect piece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="section-title">
+            <h2>Our Exclusive Collections</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="collections-grid">
+            <!-- Imitation Jewelry -->
+            <div class="collection-card fade-in">
+                <div class="card-image">💎</div>
+                <div class="card-content">
+                    <h3>Imitation Jewelry</h3>
+                    <p>
+                        Stunning fashion jewelry that sparkles with elegance. Our imitation jewelry collection features 
+                        contemporary designs crafted with precision and style.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Hypoallergenic materials</li>
+                            <li>Long-lasting shine</li>
+                            <li>Contemporary & traditional designs</li>
+                            <li>Perfect for daily wear & occasions</li>
+                            <li>Affordable luxury pricing</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Perfect for everyday elegance and special celebrations
+                    </p>
+                </div>
+            </div>
+
+            <!-- One Gram Gold Jewelry -->
+            <div class="collection-card fade-in">
+                <div class="card-image">✨</div>
+                <div class="card-content">
+                    <h3>One Gram Gold Jewelry</h3>
+                    <p>
+                        Experience the beauty of authentic gold without the weight or expense. Our one gram gold collection 
+                        combines real gold craftsmanship with affordable luxury.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li>Authentic gold content</li>
+                            <li>Lightweight & comfortable</li>
+                            <li>Affordable real gold</li>
+                            <li>Timeless traditional designs</li>
+                            <li>Certificate of authenticity</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Real gold elegance at one gram pricing
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bangles -->
+            <div class="collection-card fade-in">
+                <div class="card-image">🌸</div>
+                <div class="card-content">
+                    <h3>Bangles & Bracelets</h3>
+                    <p>
+                        From traditional to contemporary, our extensive bangle collection adds the perfect finishing touch 
+                        to any outfit and occasion.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Variety Includes</h4>
+                        <ul>
+                            <li>Brass bangles</li>
+                            <li>Stone-studded designs</li>
+                            <li>Enamel work bangles</li>
+                            <li>Metal bracelets</li>
+                            <li>Set & individual options</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Complete your look with our diverse bangle range
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hair Accessories -->
+            <div class="collection-card fade-in">
+                <div class="card-image">✨</div>
+                <div class="card-content">
+                    <h3>Hair Accessories</h3>
+                    <p>
+                        Elegant hair adornments that elevate your style. Our collection features clips, pins, and decorative 
+                        pieces for every hairstyle and occasion.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Collection Features</h4>
+                        <ul>
+                            <li>Hair clips & pins</li>
+                            <li>Decorative hair bows</li>
+                            <li>Metal & stone embellished pieces</li>
+                            <li>Traditional & modern designs</li>
+                            <li>Daily wear & special occasion styles</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Express yourself through your hair
+                    </p>
+                </div>
+            </div>
+
+            <!-- Fancy Items -->
+            <div class="collection-card fade-in">
+                <div class="card-image">👑</div>
+                <div class="card-content">
+                    <h3>Fancy Items & Accessories</h3>
+                    <p>
+                        A curated selection of fashionable accessories and decorative items. Discover unique pieces that 
+                        add personality and charm to your personal style.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Includes</h4>
+                        <ul>
+                            <li>Fashion accessories</li>
+                            <li>Decorative items</li>
+                            <li>Trendy pieces</li>
+                            <li>Statement jewelry</li>
+                            <li>Unique collectibles</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Stand out with our exclusive fancy collections
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cosmetic Products -->
+            <div class="collection-card fade-in">
+                <div class="card-image">💄</div>
+                <div class="card-content">
+                    <h3>Cosmetic Products</h3>
+                    <p>
+                        Premium beauty essentials to complement your natural radiance. Our cosmetics selection features 
+                        quality products for skincare and beauty.
+                    </p>
+                    <div class="collection-details">
+                        <h4>Product Range</h4>
+                        <ul>
+                            <li>Skincare products</li>
+                            <li>Makeup essentials</li>
+                            <li>Premium quality brands</li>
+                            <li>Natural & organic options</li>
+                            <li>Trusted & tested products</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gold); font-weight: 600;">
+                        Beauty products for every skin type
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+919381547576">+91 9381547576</a></p>
+                        <p style="font-size: 0.8rem; margin-top: 0.3rem; color: #999;">Owner: Harsha Chinmanwar</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:buntyharsha650@gmail.com">buntyharsha650@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Bhainsa, Nirmal District<br>Telangana 504103, India</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Hours</h3>
+                        <p>Everyday: 10:00 AM - 9:15 PM<br>Sunday: 11:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <h3>Send Message</h3>
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="e.g., Product Inquiry">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sri Rekha Ladies Emporium. All rights reserved.</p>
+        <p>Owned by <strong>Harsha Chinmanwar</strong> | Bhainsa, Nirmal District, Telangana 504103</p>
+        <p>Contact: <a href="tel:+919381547576">+91 9381547576</a> | <a href="mailto:buntyharsha650@gmail.com">buntyharsha650@gmail.com</a></p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Create mailto link
+            const mailtoLink = `mailto:buntyharsha650@gmail.com?subject=${encodeURIComponent(subject || 'Inquiry from ' + name)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nMessage:\n' + message)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            document.querySelector('.contact-form').reset();
+            alert('Thank you for your inquiry! Our team will get back to you soon.');
+        }
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Apply observer to cards
+        document.querySelectorAll('.collection-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Button click handlers
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
